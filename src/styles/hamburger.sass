@@ -1,0 +1,36 @@
+.hamburger-box
+  padding: 8px
+  display: block
+  outline: none
+  box-shadow: none
+  height: 50px
+  width: 50px
+
+  & :nth-child(1)
+    transform: translateY(-10px)
+
+  & :nth-child(2)
+    transform: translateY(10px)
+
+  .hamburger-inner
+    position: absolute
+    display: block
+    width: 26px
+    height: 3px
+    background-color: #000
+    border-radius: 4px
+    transition-property: transform
+    transition-duration: .15s
+    transition-timing-function: ease
+    content: ""
+
+
+.hamburger-box-active
+  & :nth-child(1)
+    transform: rotate(40deg)
+
+  & :nth-child(2)
+    transform: rotate(-40deg)
+
+  & :nth-child(3)
+    opacity: 0

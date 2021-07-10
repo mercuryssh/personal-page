@@ -1,5 +1,4 @@
 import React from "react";
-import styles from '../styles/home.module.sass';
 
 interface HeaderProps {
   title?: String
@@ -8,8 +7,15 @@ interface HeaderProps {
 class Header extends React.Component<HeaderProps, any> {
   render() {
     return (
-      <header className={styles.header}>
-        <span>{this.props.title || 'Joseph Page'}</span>
+      <header className={'header'}>
+        <span className={'logo'}>{this.props.title || 'Joseph Page'}</span>
+        <nav className={'navbar'}>
+          <ul>
+            <li className={'navbar-item'}>Home</li>
+            <li className={'navbar-item'}>Post</li>
+            <li className={'navbar-item'}>Projects</li>
+          </ul>
+        </nav>
       </header>
     )
   }
