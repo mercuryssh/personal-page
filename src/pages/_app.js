@@ -1,12 +1,17 @@
-import Layout from '../components/structure/layout'
+import React from "react";
+import Head from "next/head";
 import '../styles/globals.sass';
 
 function MyApp({Component, pageProps}) {
   return (
-      <Layout>
+      <>
+        <Head>
+          <title>Joseph Page!</title>
+          <link rel='shortcut icon' href={'favicon.png'} type='image/x-icon'/>
+        </Head>
         <Component {...pageProps} />
-      </Layout>)
+      </>
+  )
 }
-
 
 export default MyApp

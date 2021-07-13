@@ -3,8 +3,24 @@ import Head from "next/head";
 // Components
 import Header from "../header";
 import AsideContainer from "./aside-container";
+import DropdownMenu from "./dropdownMenu";
 
-export default class Layout extends React.Component<any, any> {
+interface LayoutState {
+  menuVisible: Boolean
+}
+
+export default class Layout extends React.Component<any, LayoutState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      menuVisible: false
+    }
+  }
+
+  public toggleMenu = (): void => {
+    this.setState(({menuVisible}) => ({menuVisible: !menuVisible}))
+  }
+
   render() {
     return (
       <Fragment>
@@ -12,13 +28,14 @@ export default class Layout extends React.Component<any, any> {
           <title>Joseph Page!</title>
           <link rel='shortcut icon' href={'favicon.png'} type='image/x-icon'/>
         </Head>
-        <div className={'layout'}>
-          <AsideContainer position={'left'}/>
+        <DropdownMenu visible={this.state.menuVisible}/>
+        <div id={'layout'}>
+          <AsideContainer position={'left'} setMenu={this.toggleMenu}/>
           <div className={'body-content'}>
             <Header/>
             {this.props.children}
           </div>
-          <AsideContainer position={'right'}/>
+          <AsideContainer position={'right'} setMenu={() => {}}/>
         </div>
       </Fragment>
     )

@@ -1,0 +1,53 @@
+.about-container
+  min-height: 100vh
+  display: flex
+  justify-content: center
+
+  .picture
+    object-fit: cover
+
+  a
+    font-weight: bold
+
+  .card
+    display: inline-flex
+    flex-direction: column
+    margin: auto
+    justify-content: center
+    align-items: center
+
+    .title
+      display: block
+      margin: .4rem 0
+      font-size: 1.2rem
+
+    .body
+      max-width: 500px
+      text-align: center
+
+    .social-icons
+      padding: 1em
+      display: flex
+      gap: 0.5em
+      color: #000
+      overflow: visible
+      z-index: 9
+
+      .inner-icon
+        overflow: visible
+
+        svg
+          overflow: visible
+
+      & :first-child
+        transition: 100ms
+        transition-property: transform
+        transition-timing-function: ease
+        z-index: 1
+
+      & :hover *
+        transform: translateY(-.2em)
+
+
+.home-link:hover
+  color: #000 !important
