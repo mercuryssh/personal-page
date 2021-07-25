@@ -1,4 +1,4 @@
-$bg-color-dark: #2E3440
+$color-dark: #2E3440
 $border-color: #D8DEE9
 
 @import "about"
@@ -31,36 +31,29 @@ $border-color: #D8DEE9
 
 #layout
   display: grid
-  grid-template-columns: 75px auto 75px
+  grid-template-columns: 105px 1fr 105px
   justify-content: center
   height: 100vh
+  max-width: 1800px
+  margin: auto
 
   .body-content
     padding: 1em
 
-
-.aside-container
-  display: flex
-  justify-content: center
-  padding: 0 0.5em
-
-  .container
-    position: relative
-    margin: 1em
-
   .aside-left
-    position: absolute
-    display: flex
-    flex-direction: column
-    justify-items: center
-    justify-content: space-between
     border-right: 1px solid $border-color
-    height: 100vh
-    z-index: 100
-
 
   .aside-right
     border-left: 1px solid $border-color
+
+.aside-container
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  padding: 1em 0
+  z-index: 999
+
 
   .navigation-item
     top: 20px
@@ -101,11 +94,22 @@ $border-color: #D8DEE9
     color: #fff
 
   li:hover
-    color: $bg-color-dark !important
+    color: $color-dark !important
 
 .icons:hover
   fill: #191932
 
+.card-list
+  display: flex
+  flex-direction: column
+  margin: 2em 0
+  gap: 1em
+
+  .card-container
+    display: block
+    padding: 1em
+    border-radius: 5px
+    border: 1px solid $border-color
 
 @media (max-width: 700px)
   #layout

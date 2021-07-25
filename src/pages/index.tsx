@@ -1,12 +1,18 @@
 import React from "react";
 import Layout from '../components/structure/layout';
+import Card, {CardList} from "../components/card";
 
 class Index extends React.Component<any, any> {
+
+  constructor(props: any) {
+    super(props)
+  }
+
   render() {
     return (
       <Layout>
         <div>
-          <span>Hello Jahy</span>
+          <CardList><Card/></CardList>
         </div>
       </Layout>
     )

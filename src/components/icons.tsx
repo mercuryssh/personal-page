@@ -34,6 +34,6 @@ export const media_ico = [
   },
   {
     ico: github_ico,
-    link: 'https://github.com/waterpkg'
+    link: 'https://github.com/waterssh'
   }
 ]
