@@ -1,4 +1,9 @@
 @import "home"
+@import "articles"
+
+::selection
+  background-color: #2E3440
+  color: white
 
 *
   margin: 0
@@ -6,17 +11,17 @@
   box-sizing: border-box
 
 @font-face
-  font-family: Noto Sans Japan
+  font-family: Ubuntu
   font-style: normal
   font-weight: 400
-  src: url('../assets/fonts/Noto_Sans_JP/NotoSansJP-Regular.otf')
+  src: url('../assets/fonts/Ubuntu-R.ttf')
   font-display: swap
 
 body
-  font-family: Noto Sans Japan, sans-serif
-  //background: #191e23
+  font-family: Ubuntu, Noto Sans, sans-serif
   background: #fff
-  color: #191932
+  color: $fg-main
+  line-height: 1.9
 
 ul
   list-style: none
@@ -30,3 +35,11 @@ button
 a
   text-decoration: none
   color: currentColor
+
+hr
+  border: solid $border-color
+  border-width: 0 0 1px 0
+
+.link:hover
+  text-decoration: underline #191932
+  cursor: pointer

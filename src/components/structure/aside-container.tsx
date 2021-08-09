@@ -1,7 +1,8 @@
 import React from "react";
 
 interface IProps {
-  side: String
+  side: String,
+  menuActive: Boolean
 }
 
 export default class AsideContainer extends React.Component<IProps, any> {
@@ -16,7 +17,8 @@ export default class AsideContainer extends React.Component<IProps, any> {
 
   render() {
     return (
-      <aside className={'aside-container ' + (this.props.side == 'left' ? 'aside-left' : 'aside-right')}>
+      <aside
+        className={'aside-container ' + (this.props.menuActive ? 'active ' : ' ') + (this.props.side == 'left' ? 'aside-left ' : 'aside-right ')}>
         {this.props.children}
       </aside>
     )

@@ -8,10 +8,9 @@ class Header extends React.Component<HeaderProps, any> {
   render() {
     return (
       <header className={'header'}>
-        <span className={'logo'}>{this.props.title || 'Joseph Page'}</span>
+        <span className={'logo'}>{this.props.title || '<Joseph Page/>'}</span>
         <nav className={'navbar'}>
           <ul>
-            <li className={'navbar-item'}>Home</li>
             <li className={'navbar-item'}>Post</li>
             <li className={'navbar-item'}>Projects</li>
           </ul>

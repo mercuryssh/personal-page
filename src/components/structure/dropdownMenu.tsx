@@ -19,6 +19,9 @@ class DropdownMenu extends React.Component<MenuProps, any> {
             <li>
               <Link href={'/about'}>About</Link>
             </li>
+            <li>
+              <Link href={'/project'}>Projects</Link>
+            </li>
           </ul>
         </FullScreenContainer>
       </div>

@@ -2,20 +2,36 @@ import React from "react";
 import Layout from '../components/structure/layout';
 import Card, {CardList} from "../components/card";
 
+
 class Index extends React.Component<any, any> {
 
   constructor(props: any) {
     super(props)
   }
-
   render() {
     return (
-      <Layout>
+      <Layout title={'Last Content'}>
         <div>
-          <CardList><Card/></CardList>
+          <CardList>
+            {this.props.post.map((item, index) => {
+              return <Card title={item.title} 
+              content={item.description} 
+              date={item.date_posted} key={index}
+              url={item.url}
+              />
+            })}
+          </CardList>
         </div>
       </Layout>
     )
+  }
+}
+
+export async function getStaticProps() {
+  const data = await fetch("http://127.0.0.1:8000/articles/")
+  const post = await data.json()
+  return {
+    props: {post}
   }
 }
 
