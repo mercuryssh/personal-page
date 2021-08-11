@@ -5,7 +5,7 @@ import Header from "../header";
 import AsideContainer from "./aside-container";
 import DropdownMenu from "./dropdownMenu";
 import Hamburger from "../hamburger";
-import CoverImage from "../structure/coverImage";
+import CoverImage from "../coverImage";
 
 interface LayoutState {
   menuVisible: Boolean;
@@ -60,14 +60,14 @@ export default class Layout extends React.Component<LayoutProps, LayoutState> {
             {github}
           </AsideContainer>
 
-          <div className={"body-content"}>
+          <div >
             {/*<Header/>*/}
-            <main>
-              {this.props.picture_url ? (
+            {this.props.picture_url ? (
                 <CoverImage cover={this.props.picture_url} />
               ) : (
                 ""
               )}
+            <main className={"body-content"}>
               <h3 className={"title-xl"}>{this.props.title}</h3>
               {this.props.children}
             </main>
