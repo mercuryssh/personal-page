@@ -57,16 +57,16 @@ export default class Layout extends React.Component<LayoutProps, LayoutState> {
               active={this.state.menuVisible}
               toggleActive={this.toggleMenu}
             />
-            {github}
+            <a href="https://github.com/waterssh/personal-page">{github}</a>
           </AsideContainer>
 
-          <div >
+          <div>
             {/*<Header/>*/}
             {this.props.picture_url ? (
-                <CoverImage cover={this.props.picture_url} />
-              ) : (
-                ""
-              )}
+              <CoverImage cover={this.props.picture_url} />
+            ) : (
+              ""
+            )}
             <main className={"body-content"}>
               <h3 className={"title-xl"}>{this.props.title}</h3>
               {this.props.children}

@@ -17,7 +17,7 @@ class Index extends React.Component<any, any> {
               return <Card title={item.title} 
               content={item.description} 
               date={item.date_posted} key={index}
-              url={item.url}
+              url={item.url_name}
               />
             })}
           </CardList>
@@ -28,7 +28,7 @@ class Index extends React.Component<any, any> {
 }
 
 export async function getStaticProps() {
-  const data = await fetch("http://127.0.0.1:8000/articles/")
+  const data = await fetch("https://mashu-blog.herokuapp.com/articles")
   const post = await data.json()
   return {
     props: {post}

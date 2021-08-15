@@ -6,13 +6,13 @@ import { ArticleContainer } from "../../components/article";
 
 // get static path from list
 export const getStaticPaths = async () => {
-  const post = await fetch("http://127.0.0.1:8000/articles/");
+  const post = await fetch("https://mashu-blog.herokuapp.com/articles");
   const path = await post.json();
 
   const paths = path.map((post) => {
     return {
       params: {
-        post: post.url,
+        post: post.url_name,
       },
     };
   });
@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context: any) => {
   let data = await fetch(
-    "http://127.0.0.1:8000/articles/" + context.params.post
+    "https://mashu-blog.herokuapp.com/articles/" + context.params.post
   );
   data = await data.json();
   return {
@@ -43,7 +43,7 @@ export default function Article({ article }) {
   });
 
   return (
-    <Layout title={article.post.title} picture_url={article.post.picture_url}>
+    <Layout title={article.post.title} picture_url={article.post.cover_url}>
       <ArticleContainer>{reactContent}</ArticleContainer>
     </Layout>
   );

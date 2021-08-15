@@ -6,7 +6,7 @@ const ArticleContainer = (props) => {
   useEffect(() => {
     Prism.highlightAll();
   });
-  return <article>{props.children}</article>;
+  return <article className="article">{props.children}</article>;
 };
 
 export { ArticleContainer };
