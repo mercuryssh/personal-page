@@ -16,7 +16,7 @@ class Index extends React.Component<any, any> {
             {this.props.post.map((item, index) => {
               return <Card title={item.title} 
               content={item.description} 
-              date={item.date_posted} key={index}
+              date={item.date} key={index}
               url={item.url_name}
               />
             })}
