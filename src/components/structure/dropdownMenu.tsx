@@ -3,29 +3,32 @@ import FullScreenContainer from "./fullScreenContainer";
 import Link from "next/link";
 
 interface MenuProps {
-  visible: Boolean
+  visible: Boolean;
 }
 
 class DropdownMenu extends React.Component<MenuProps, any> {
-
   render() {
     return (
-      <div className={'dropdown-menu' + (this.props.visible ? ' dropdown-menu-active' : '')}>
+      <div
+        className={
+          "dropdown-menu" + (this.props.visible ? " dropdown-menu-active" : "")
+        }
+      >
         <FullScreenContainer>
-          <ul className={'navigation-menu'}>
+          <ul className={"navigation-menu"}>
             <li>
-              <Link href={'/'}>Home</Link>
+              <Link href={"/"}>Home</Link>
             </li>
             <li>
-              <Link href={'/about'}>About</Link>
+              <Link href={"/project"}>Projects</Link>
             </li>
             <li>
-              <Link href={'/project'}>Projects</Link>
+              <Link href={"/about"}>About</Link>
             </li>
           </ul>
         </FullScreenContainer>
       </div>
-    )
+    );
   }
 }
 
