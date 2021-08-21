@@ -72,7 +72,7 @@ export default class Layout extends React.Component<LayoutProps, LayoutState> {
               {this.props.children}
             </main>
           </div>
-          <AsideContainer side={"right"} menuActive={false}></AsideContainer>
+          <AsideContainer side={"right"} menuActive={false} />
         </div>
       </Fragment>
     );
