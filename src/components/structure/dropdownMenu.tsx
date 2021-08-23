@@ -20,7 +20,7 @@ class DropdownMenu extends React.Component<MenuProps, any> {
               <Link href={"/"}>Home</Link>
             </li>
             <li>
-              <Link href={"/project"}>Projects</Link>
+              <Link href={"/projects"}>Projects</Link>
             </li>
             <li>
               <Link href={"/about"}>About</Link>
