@@ -4,9 +4,13 @@ type ItemCardProps = {
   title: string;
   cover: string;
   description: string;
+  url: string;
+  tags: Array<any>;
 };
 
 export default function ItemCard(props: ItemCardProps) {
+  console.log(props.tags);
+  const tags = Object.keys(props.tags)
   return (
     <div className="item-card">
       <figure>
@@ -14,10 +18,12 @@ export default function ItemCard(props: ItemCardProps) {
       </figure>
       <div className="content">
         <p className="title">{props.title}</p>
-        <p>{props.description}</p>
         <hr />
+        <p>{props.description}</p>
         <div className="tag-list">
-          <Tag title={"project tag"} />
+          {tags.map((item, index) => (
+            <Tag title={item} key={index} />
+          ))}
         </div>
       </div>
     </div>
