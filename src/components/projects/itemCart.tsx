@@ -9,7 +9,6 @@ type ItemCardProps = {
 };
 
 export default function ItemCard(props: ItemCardProps) {
-  console.log(props.tags);
   const tags = Object.keys(props.tags)
   return (
     <div className="item-card">
