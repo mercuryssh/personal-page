@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../components/structure/layout";
-import Card, { CardList } from "../components/card";
+import Layout from "../components/layout";
+import Card, { CardList } from "../components/home/card";
 
 class Index extends React.Component<any, any> {
   private readonly article: Array<any>;
-
+  
   constructor(props: any) {
     super(props);
     this.article = props.post.reverse();

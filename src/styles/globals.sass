@@ -1,10 +1,9 @@
-@import "theme"  
+@import "theme"
 @import "home"
 @import "articles"
 @import "prims-theme"
 @import "projects"
 @import "about"
-
 
 ::selection
   background-color: #2E3440
@@ -22,8 +21,15 @@
   src: url('../assets/fonts/Ubuntu-R.ttf')
   font-display: swap
 
+@font-face
+  font-family: Noto Sans Japan
+  font-style: normal
+  font-weight: 400
+  src: url(../assets/fonts/NotoSansJP-Regular.otf)
+  font-display: swap
+
 body
-  font-family: Ubuntu, Noto Sans, sans-serif
+  font-family: Ubuntu, Noto Sans Japan, sans-serif
   background: #fff
   color: $fg-main
   line-height: 1.9
@@ -47,8 +53,7 @@ hr
   border-width: 0 0 1px 0
 
 h1, h2, h3, h4
-    line-height: 1
-
+  line-height: 1
 
 .link:hover
   text-decoration: underline #191932
