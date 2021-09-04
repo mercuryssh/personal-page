@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import Head from "next/head";
+import React, { Fragment } from 'react';
+import Head from 'next/head';
 // Components
-import Header from "../header";
+import Header from '../header';
 import AsideContainer from "./aside-container";
 import DropdownMenu from "./dropdownMenu";
 import Hamburger from "../hamburger";
@@ -61,7 +61,10 @@ export default class Layout extends React.Component<LayoutProps, LayoutState> {
           </AsideContainer>
 
           <div>
-            {/*<Header/>*/}
+            <Header
+              active={this.state.menuVisible}
+              toggleActive={this.toggleMenu}
+            />
             {this.props.picture_url ? (
               <CoverImage cover={this.props.picture_url} />
             ) : (
