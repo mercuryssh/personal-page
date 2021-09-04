@@ -1,5 +1,5 @@
 import React from "react";
-import FullScreenContainer from "../components/structure/fullScreenContainer";
+import FullScreenContainer from "../components/layout/fullScreenContainer";
 import Head from "next/head";
 import Link from "next/link";
 

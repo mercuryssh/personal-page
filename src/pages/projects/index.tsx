@@ -1,5 +1,5 @@
 import ItemCard from "../../components/projects/itemCart";
-import Layout from "../../components/structure/layout";
+import Layout from "../../components/layout";
 
 export const getStaticProps = async () => {
   const projects = await (await fetch("https://mashu-blog.herokuapp.com/projects")).json();

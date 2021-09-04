@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Tag from "./tag";
 
 type ItemCardProps = {
@@ -16,7 +17,9 @@ export default function ItemCard(props: ItemCardProps) {
         <img src={props.cover} alt="" />
       </figure>
       <div className="content">
-        <p className="title">{props.title}</p>
+        <p className="title">
+          <Link href={"/projects/" + props.url} >{props.title}</Link>
+        </p>
         <hr />
         <p>{props.description}</p>
         <div className="tag-list">

@@ -1,0 +1,26 @@
+.card-list
+  display: flex
+  flex-direction: column
+  margin: 2em 0
+  gap: 1em
+
+  .card-container
+    display: block
+    padding: 1em
+    margin: 0.2em 1em
+    border-radius: 5px
+    border: 1px solid $border-color
+    cursor: pointer
+    transition: 200ms
+
+    .title
+      font-size: 1.2em
+      font-weight: bold
+
+    .resume
+      margin: 1em 0
+
+    &:hover, &:active
+      color: #101026
+      transform: translate(-5px)
+      box-shadow: 18px 14px currentColor

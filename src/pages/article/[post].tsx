@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useRemark } from "react-remark";
 // Components
-import Layout from "../../components/structure/layout";
-import { ArticleContainer } from "../../components/article";
+import Layout from "../../components/layout";
+import { ArticleContainer } from "../../components/articles";
 
 // get static path from list
 export const getStaticPaths = async () => {
