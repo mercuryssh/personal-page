@@ -3,7 +3,8 @@ import Hamburger, { menuProps } from '../hamburger'
 export default function Header({ active, toggleActive }: menuProps) {
 
   return (
-    <header className={"header " + (active ? 'bg-white' : '')}>
+    <header className="header">
+      <span className="title-lg" style={{ marginLeft: '0.5em' }}>Joseph Blog</span>
       <div>
         <Hamburger
           active={active}

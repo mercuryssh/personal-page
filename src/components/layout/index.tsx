@@ -6,6 +6,7 @@ import AsideContainer from "./aside-container";
 import DropdownMenu from "./dropdownMenu";
 import Hamburger from "../hamburger";
 import CoverImage from "../articles/coverImage";
+import Info from '../info'
 
 interface LayoutState {
   menuVisible: Boolean;
@@ -19,7 +20,6 @@ interface LayoutProps {
 const github = (
   <div>
     <svg
-      className={"icons"}
       xmlns="http://www.w3.org/2000/svg"
       width="3em"
       height="3em"
@@ -46,10 +46,6 @@ export default class Layout extends React.Component<LayoutProps, LayoutState> {
   render() {
     return (
       <Fragment>
-        <Head>
-          <title>Joseph Page!</title>
-          <link rel="shortcut icon" href={"favicon.png"} type="image/x-icon" />
-        </Head>
         <DropdownMenu visible={this.state.menuVisible} />
         <div id={"layout"}>
           <AsideContainer side={"left"} menuActive={this.state.menuVisible}>
@@ -68,12 +64,13 @@ export default class Layout extends React.Component<LayoutProps, LayoutState> {
             {this.props.picture_url ? (
               <CoverImage cover={this.props.picture_url} />
             ) : (
-              ""
+              null
             )}
             <main className={"body-content"}>
               <h3 className={"title-xl"}>{this.props.title}</h3>
               {this.props.children}
             </main>
+            <Info />
           </div>
           <AsideContainer side={"right"} menuActive={false} />
         </div>

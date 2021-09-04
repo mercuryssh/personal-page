@@ -1,21 +1,28 @@
 $color-dark: #2E3440
 $border-color: #D8DEE9
-$fg-main: #0A0A0A
 
 @import "hamburger"
 @import "card-list"
+@import "footer"
 
 .header
   display: flex
-  justify-content: flex-end
+  justify-content: space-between
+  align-items: center
+  position: fixed
+  min-width: 100vw
   z-index: 9
+  background-color: #fff
 
   div
     float: left
 
 .title-xl
-  font-size: 3.7em
+  font-size: 2.7em
   margin: .5em 0
+
+.title-lg
+  font-size: 1.7em
 
 .container
   max-width: 900px
@@ -31,7 +38,7 @@ $fg-main: #0A0A0A
   display: flex
   justify-content: center
   position: fixed
-  background-color: #7C7C7C
+  background-color: #fff
   max-height: 0
   overflow: hidden
   transition: 700ms
@@ -44,16 +51,14 @@ $fg-main: #0A0A0A
   flex-direction: column
   font-size: 1.7rem
 
-  li
-    color: #fff
-
   li:hover
-    color: $fg-main !important
+    color: #BF616A
 
 #layout
   display: grid
   justify-content: center
-  height: 100vh
+  min-height: 100vh
+  height: fit-content
   max-width: 1200px
   margin: auto
   grid-template-columns: 100%
@@ -69,6 +74,7 @@ $fg-main: #0A0A0A
 
   #layout
     grid-template-columns: 105px 1fr 105px
+    grid-template-rows: 100%
 
     .body-content
       padding: 1em
@@ -89,20 +95,13 @@ $fg-main: #0A0A0A
     align-items: center
     padding: 2em 0
     z-index: 999
-    color: $fg-main
     visibility: visible
-
-    &.active
-      color: #fff
-
-      .menu-btn
-        transition-delay: 0s
-
-      .icons
-        transition-delay: 0.45s
 
     .navigation-item
       top: 20px
       left: 0
       width: 50px
       height: 50px
+
+    a:hover
+      color: #BF616A

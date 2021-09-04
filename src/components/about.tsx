@@ -9,7 +9,7 @@ class Card extends React.Component<any, any> {
       <div className={'card'}>
         {/*<Image className={'picture'} src={'/face.jpeg'} width={220} height={220}/>*/}
         <img className={'picture'} src={"/face.jpeg"} alt="" width={'200px'} height={'220px'}/>
-        <span className={'title'}>Hello, Mashu here✌</span>
+        <span className={'title'}>Hello, Mashu here✌🏻</span>
         <p className={'body'}>Welcome to my personal website, if you are here because you found one of my works, you can
           get information
           about me and my others projects on this sides</p>
@@ -36,7 +36,4 @@ class About extends React.Component<any, any> {
   }
 }
 
-export {
-  Card,
-  About
-}
+export default About
