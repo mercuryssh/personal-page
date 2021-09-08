@@ -1,4 +1,4 @@
-import Link from "next/link";
+import CardFace from "./cardFace";
 import Tag from "./tag";
 
 type ItemCardProps = {
@@ -14,12 +14,12 @@ export default function ItemCard(props: ItemCardProps) {
   const tags = Object.keys(props.tags)
   return (
     <div className="item-card">
-      <figure>
-        <img src={props.cover} alt="" />
-      </figure>
-      <div className="content">
-        <p className="title">
-          <Link href={"/projects/" + props.url} >{props.title}</Link>
+      <CardFace links={[props.url]}>
+        <figure>
+          <img src={props.cover} alt="" />
+        </figure>
+        <p>
+          <a className="title" href="" >{props.title}</a>
         </p>
         <hr />
         <p>{props.description}</p>
@@ -28,7 +28,7 @@ export default function ItemCard(props: ItemCardProps) {
             <Tag title={item} key={index} />
           ))}
         </div>
-      </div>
+      </CardFace>
     </div>
   );
 }
