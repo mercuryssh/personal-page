@@ -2,28 +2,64 @@
 	display: flex
 	margin: 4em 0
 
-.item-card
-	overflow: clip
-	max-width: 400px
-	border: solid 1px currentColor
-	background-color: #fff
-	color: $fg-gray
-	transition: 400ms
+	.item-card
+		max-width: 400px
+		min-height: 400px
+		height: fit-content
+		position: relative
 
-	&:hover
-		box-shadow: 18px 14px currentColor
+		img
+			width: 100%
+			object-fit: cover
 
-	hr
-		margin: 0.5em 0
-	img
-		max-width: 100%
-		object-fit: cover
+		hr
+			margin: 0.5em 0
 
-	.content
-		padding: 0.5em 0.5em
+		.content
+			padding: 0.5em 0.5em
+
 		.title
 			font-size: 1.3em
 			font-weight: bold
+
+.card-face
+	width: 400px
+	min-height: 400px
+	overflow: clip
+	background-color: #fff
+
+	.front, .back
+		position: absolute
+		transition: transform 0.3s linear
+		-webkit-backface-visibility: hidden
+		backface-visibility: hidden
+		height: 100%
+		width: 100%
+		z-index: 1
+		border: 1px solid $border-color
+		border-radius: 5px
+
+	.front
+		transform: perspective(600px) rotateY(0deg)
+
+	.back
+		display: flex
+		justify-content: center
+		align-items: center
+		gap: 1em
+		transform: perspective(600px) rotateY(180deg)
+
+		.ico
+			cursor: pointer
+			transition: 200ms
+			&:hover
+				color: $link-active
+
+	&:hover
+		.front
+			transform: perspective(600px) rotateY(-180deg)
+		.back
+			transform: perspective(600px) rotateY(0deg)
 
 .tag-list
 	display: flex
@@ -40,3 +76,8 @@
 	color: #fff
 
 	user-select: none
+
+
+@media (max-width:401px)
+	.card-face
+		width: 320px
